@@ -1,6 +1,6 @@
 ## PythonBasic
 
 
-![Python](https://velog.velcdn.com/images/starkdy/post/ccbe04de-ede3-448c-9bdd-b855303f69f7/image.png)
+![Python](https://miro.medium.com/v2/resize:fit:1200/1*m0H6-tUbW6grMlezlb52yw.png)
 
 aws cloud school lecture.
