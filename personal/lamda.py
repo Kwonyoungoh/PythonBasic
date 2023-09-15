@@ -2,9 +2,9 @@
 # 각 튜플은 학생의 이름, 점수, 키를 나타냅니다.
 # 리스트를 점수가 높은 순서로 정렬하되,
 # 점수가 같을 경우 키가 낮은 순서로 정렬하세요.
-students = [("John", 90, 170), ("Jane", 85, 160), ("Doe", 92, 175)]
+students = [("cohn", 990, 170), ("aane", 88885, 180), ("aoe", 9999992, 175), ("abddoe", 92, 175)]
 
-res= sorted(students, key = lambda x: (x,len(x)))
+res= sorted(students, key = lambda x: (len(x[0]),x[0] ,x[1],x[2]) )
 print(res)
 
 # 2
@@ -16,6 +16,9 @@ words = ["apple", "banana", "cherry", "date", "fig", "grapes", "kiwi"]
 #주어진 리스트에 대해 홀수와 짝수를 분류하여 홀수는 오름차순, 짝수는 내림차순으로 정렬하세요.
 
 numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+
+nums = sorted( numbers , key = lambda x : ())
+
 
 # 4
 # 다음과 같은 사람의 나이와 이름 정보가 들어있는
