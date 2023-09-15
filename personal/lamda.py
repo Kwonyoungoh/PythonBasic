@@ -17,7 +17,7 @@ words = ["apple", "banana", "cherry", "date", "fig", "grapes", "kiwi"]
 
 numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
 
-nums = sorted( numbers , key = lambda x : (x%2==0,-x))
+nums = sorted( numbers , key = lambda x : (x%2==1,-x if x%2==1 else x ))
 print(nums)
 
 
