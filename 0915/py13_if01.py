@@ -8,7 +8,7 @@ if a1 == 3:
 else:
     print('ah nim')
 
-if a1 is b :
+if a1 is b:
     pass
 else:
     print('dd')
