@@ -6,7 +6,7 @@ while True :
     num = randint(1, 37)
 
     for i in nums :
-        if i == num :
+        if i is num :
             break
 
     nums.append(num)

@@ -17,3 +17,6 @@ def func() -> int:
 
 
 print(func())
+
+# 이건 람다여
+(lambda: print('this is lamda'))()
