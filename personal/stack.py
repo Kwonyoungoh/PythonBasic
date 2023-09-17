@@ -1,19 +1,20 @@
-class Stack :
+class Stack:
 
     def __init__(self):
         self.lst = []
 
-    def add(self,num):
-       self.lst.append(num)
+    def add(self, num):
+        self.lst.append(num)
 
     def pop(self):
         if not self.lst:
             print('Stack is empty')
             return None
-        return  self.lst.pop()
+        return self.lst.pop()
 
     def show(self):
         print(self.lst)
+
 
 s1 = Stack()
 s1.add(2)
