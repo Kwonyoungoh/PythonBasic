@@ -6,19 +6,21 @@ def fibo(n, mem):
         return [1,0]
     elif n == 1:
         return [0,1]
-    if not mem[n]:
-        mem[n] == [x+y for x,y in zip(fibo(n-1,mem),fibo(n-2,mem))]
+    if mem[n][0] == 0 and mem[n][1] == 0 :
+        mem[n] = [x+y for x,y in zip(fibo(n-1,mem),fibo(n-2,mem))]
     return mem[n]
 
 
-lst = [[0,0]for _ in range(4)]
-
-lst2 = fibo(3,lst)
-print('done')
-# nums = int(input())
+# lst = [ [0,0] for _ in range(4)]
 #
-# for _ in range(nums):
-#     mem = {}
-#     n = int(input())
-#     lst1 =fibo(n, mem)
-#     print(lst1[0], lst1[1])
+# lst2 = fibo(3,lst)
+# print('done')
+nums = int(input())
+
+for _ in range(nums):
+    mem = []
+    n = int(input())
+    mem = [[0,0] for _ in range(n+1)]
+
+    lst1 =fibo(n, mem)
+    print(lst1[0], lst1[1])
