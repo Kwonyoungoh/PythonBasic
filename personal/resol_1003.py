@@ -6,7 +6,8 @@ def fibo(n, mem):
         return [1,0]
     elif n == 1:
         return [0,1]
-    if mem[n][0] == 0 and mem[n][1] == 0 :
+    # if mem[n][0] == 0 and mem[n][1] == 0 :
+    if not mem[n][0]:
         mem[n] = [x+y for x,y in zip(fibo(n-1,mem),fibo(n-2,mem))]
     return mem[n]
 
