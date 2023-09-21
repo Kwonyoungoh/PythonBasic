@@ -31,41 +31,39 @@ def dfs(n, cnt):
 
 # memoization 메모이제이션을 이용하자
 def func1(n):
-    lst1 = []
+    lst1 = [0] * (n + 1)
     # 주어진 숫자 n번만큼 반복한다.
-    for i in range(n-1):
+    for i in range(2, n + 1):
         # 다 저장하자
         # 리스트도 초기화 해둬야함
         # 1일때
-        lst1.append(0)
-        if i == 0 or i == 1 or i == 2:
+        if i == 2 or i == 3:
             lst1[i] = 1
             continue
 
-        if (i + 1) % 3 == 0:
+        if i % 3 == 0:
             if lst1[i]:
-                lst1[i] = min(lst1[i], lst1[(i + 1) // 3] + 1)
+                lst1[i] = min(lst1[i], lst1[i // 3] + 1)
             else:
-                lst1[i] = lst1[lst1[(i + 1) // 3]] + 1
+                lst1[i] = lst1[i // 3] + 1
 
-        if (i + 1) % 2 == 0:
+        if i % 2 == 0:
             if lst1[i]:
-                lst1[i] = min(lst1[i], lst1[(i + 1) // 2] + 1)
+                lst1[i] = min(lst1[i], lst1[i // 2] + 1)
             else:
-                lst1[i] = lst1[lst1[(i + 1) // 2]] + 1
+                lst1[i] = lst1[i // 2] + 1
 
         if lst1[i]:
-            lst1[i] = min(lst1[i], lst1[(i + 1) - 1] + 1)
+            lst1[i] = min(lst1[i], lst1[i - 1] + 1)
         else:
-            a= lst1[lst1[(i + 1) - 1]]
-            lst1[i] = a + 1
+            lst1[i] = lst1[i - 1] + 1
 
-    print(lst1[n-1])
+    ans = lst1[n]
+    print(ans)
 
 
 n = int(stdin.readline().rstrip())
 func1(n)
-
 
 # 10 5 4 2 1
 # 10 9 3 1
