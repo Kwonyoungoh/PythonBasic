@@ -58,6 +58,7 @@ print(res05)
 # 6
 str05 = 'abc! def? ghi#'
 
+#[]안에서만 ^가 not의 의미를 갖는다..
 pat05 = re.compile('[^\w\s]')
 res05 = pat05.findall(str05)
 print(res05)
