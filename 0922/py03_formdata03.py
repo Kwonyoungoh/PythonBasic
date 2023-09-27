@@ -2,7 +2,7 @@
 import csv
 
 # 파일 읽기
-f = open('movies.csv','r', encoding='utf-8')
+f = open('../personal/movies.csv', 'r', encoding='utf-8')
 # csv 파일 형식을 파이썬에서 사용할 수있는 형태로 변환
 data = csv.reader(f)
 # 이렇게 읽으면됨

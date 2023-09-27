@@ -10,6 +10,7 @@ for _ in range(s_n):
     lst01.append(point)
 
 
+
 # 첫계단은 무조건 밟아야함
 # 세계단 연속으로 밟을수는 없음
 
