@@ -1,20 +1,20 @@
 from sys import stdin
 
-# dp로 풀이
-
-# 입력받기
 n = int(stdin.readline().rstrip())
 
-# n의 최대 갯수는 1^2으로만 표현될때 즉 최대 갯수는 n임
-# 그렇다면 최소갯수는
-dp = [0] * (n + 1)
+dp = [0,1]
 
-for i in range(1, n + 1):
-    min_val = n
-    j = 1
-    while j * j <= i:
-        min_val = min(min_val, dp[i - j * j] + 1)
-        j += 1
-    dp[i] = min_val
+# 0의 제곱은 계산 할 필요가 없다
+sqs = [i*i for i in range(1,int(n**0.5)+1)]
+
+for i in range(2,n+1):
+    min_v = n
+
+    for sq in sqs:
+        if sq > i:
+            break
+        min_v = min(min_v,dp[i-sq]+1)
+
+    dp.append(min_v)
 
 print(dp[n])
