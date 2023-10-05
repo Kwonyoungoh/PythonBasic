@@ -1,6 +1,16 @@
 from sys import stdin
 
-# 점검함수 chk(n,m)
+def f_way(x,y,farm):
+    if farm[x-1][y] ==2:
+        return x - 1,y
+    elif farm[x+1][y] ==2:
+        return x + 1, y
+    elif farm[x][y-1] ==2:
+        return x , y - 1
+    elif farm[x][y+1] ==2:
+        return x , y + 1
+    return 0
+# 점검함수 chk(n,m,lst)
 def chk(x,y,farm):
     # 일단 0인친구는 패스
     for i in range(x):
@@ -11,6 +21,14 @@ def chk(x,y,farm):
     # 리스트에 추가
     # 해당타일 주변에 2가있다면 해당타일이있는 리스트에 해당 타일을 추가 후 2로변경
     # 해당 리스트의 길이를 리턴
+            elif farm[i][j] == 1:
+                farm[i][j] =2
+                # 4방향에 2가 있다면
+                if f_way(i,j,farm):
+
+                else:
+
+
 
 
 
