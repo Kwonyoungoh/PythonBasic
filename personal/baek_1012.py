@@ -1,39 +1,28 @@
 from sys import stdin
 
 def f_way(x,y,farm):
-    if farm[x-1][y] ==2:
-        return x - 1,y
-    elif farm[x+1][y] ==2:
-        return x + 1, y
-    elif farm[x][y-1] ==2:
-        return x , y - 1
-    elif farm[x][y+1] ==2:
-        return x , y + 1
+
+    if x>0 and farm[x-1][y] == 2:
+        return 1
+    elif x < len(farm)-1 and farm[x+1][y] ==2:
+        return 1
+    elif y > 0 and farm[x][y-1] ==2:
+        return 1
+    elif y < len(farm[0])-1 and farm[x][y+1] ==2:
+        return 1
     return 0
-# 점검함수 chk(n,m,lst)
-def chk(x,y,farm,lst):
-    # 일단 0인친구는 패스
-    for i in range(x):
-        for j in range(y):
-            if farm[i][j] == 0:
-                continue
-    # 만약 해당타일 4방향타일이 0이나 1이고 해당타일이 1이라면 2로 변경후
-    # 리스트에 추가
-    # 해당타일 주변에 2가있다면 해당타일이있는 리스트에 해당 타일을 추가 후 2로변경
-    # 해당 리스트의 길이를 리턴
-            elif farm[i][j] == 1:
-                farm[i][j] =2
-                # 4방향에 2가 있다면
-                res = f_way(i,j,farm)
-                if res == 0:
-                    lst.append(res)
-                else:
-                # 해당 리스트에서 검색해서 해당 인덱스의 리스트에 추가
 
+def f_way_c(x,y,farm):
+    if x>0 and farm[x-1][y] == 1:
+        farm[x-1][y] = 2
+    if x < len(farm)-1 and farm[x+1][y] ==1:
+        farm[x+1][y] = 2
+    if y > 0 and farm[x][y-1] ==1:
+        farm[x][y-1] = 2
+    if y < len(farm[0])-1 and farm[x][y+1] ==1:
+        farm[x][y+1] = 2
 
-
-
-
+# 다 필요없고 4방향모두 2가아니라면 cnt + 1
 # 테스트 케이스 갯수
 T = int(stdin.readline().rstrip())
 
@@ -46,15 +35,30 @@ for _ in range(T):
     M = int(mnk[0])
     N = int(mnk[1])
     K = int(mnk[2])
-
+    cnt = 0
     # n*m인 밭을 먼저 만들자
     farm = [[0]*N for _ in range(M)]
-    print(farm)
+
     # k개 만큼의 배추심기
     for _ in range(K):
         xy = list(map(int, stdin.readline().rstrip().split(' ')))
         farm[xy[0]][xy[1]] = 1
+    for row in farm:
+        print(row)
+    for i in range(M):
+        for j in range(N):
+            if farm[i][j] == 0:
+                continue
 
-    # 각 밭에서 4방향으로 점검 함수
+            farm[i][j] = 2
+            if f_way(i,j,farm):
+                continue
+            else:
+                f_way_c(i, j, farm)
+                # print(i,j)
+                cnt+=1
 
-print(farm)
+    print(cnt)
+    # print(farm)
+
+# 내일 dfs로 다시풀이하기
