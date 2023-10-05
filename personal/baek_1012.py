@@ -11,7 +11,7 @@ def f_way(x,y,farm):
         return x , y + 1
     return 0
 # 점검함수 chk(n,m,lst)
-def chk(x,y,farm):
+def chk(x,y,farm,lst):
     # 일단 0인친구는 패스
     for i in range(x):
         for j in range(y):
@@ -24,9 +24,11 @@ def chk(x,y,farm):
             elif farm[i][j] == 1:
                 farm[i][j] =2
                 # 4방향에 2가 있다면
-                if f_way(i,j,farm):
-
+                res = f_way(i,j,farm)
+                if res == 0:
+                    lst.append(res)
                 else:
+                # 해당 리스트에서 검색해서 해당 인덱스의 리스트에 추가
 
 
 
