@@ -48,7 +48,7 @@ for i in range(len(N)):
         # 둘중 큰수로 만들수있는 최소수와
         # 작은 수로 만들수있는 최대수의 차를 이용해 수를 정한다.
         if len(min_vals) > 1:
-            # 작은수로 만들수있는 최대수 min_m
+            # 작은수로 만들수있는 최대수 min_n
             min_n = min_vals[0]*(10**(len(N)-1-i))
             # print(i)
             for j in range(len(N)-i):
@@ -56,7 +56,7 @@ for i in range(len(N)):
                     break
                 min_n += max(c_lst)*(10**(len(N)-1-i-1-j))
             # print(f'min_n : {min_n}')
-            # 큰수로 만들수있는 최소수와
+            # 큰수로 만들수있는 최소수 max_n
             max_n = min_vals[1]*(10**(len(N)-1-i))
             for j in range(len(N) - i):
                 if j == len(N) - i - 1:
@@ -93,7 +93,6 @@ for i in range(len(N)):
                         break
                     f_n += min(c_lst) * (10 ** (len(N) - 1 - i - 1 - j))
                 break
-print(f_n)
 if len(str(f_n))+abs(f_n-nn) > pm_cnt:
     print(pm_cnt)
 else:
