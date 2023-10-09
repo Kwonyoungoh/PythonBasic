@@ -93,6 +93,7 @@ for i in range(len(N)):
                         break
                     f_n += min(c_lst) * (10 ** (len(N) - 1 - i - 1 - j))
                 break
+print(f_n)
 if len(str(f_n))+abs(f_n-nn) > pm_cnt:
     print(pm_cnt)
 else:
