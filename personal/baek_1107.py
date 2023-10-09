@@ -98,3 +98,15 @@ if len(str(f_n))+abs(f_n-nn) > pm_cnt:
     print(pm_cnt)
 else:
     print(len(str(f_n))+abs(f_n-nn))
+
+# 질문 숫자의 범위를 벗어나는 수와의 비교또한 고려해야한다.
+# 예를 들어 tc
+# 1555
+# 8
+# 0 1 3 4 5 6 7 9
+# 670
+
+# 99999
+# 1
+# 9
+# 7
