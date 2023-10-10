@@ -26,6 +26,10 @@ if m == 10:
     print(pm_cnt)
     exit()
 
+# if m == 9 and c_lst[0] == 0:
+#     print(pm_cnt)
+#     exit()
+
 # 버튼을 새로 누를때 누적합
 f_n = 0
 
@@ -93,7 +97,29 @@ for i in range(len(N)):
                         break
                     f_n += min(c_lst) * (10 ** (len(N) - 1 - i - 1 - j))
                 break
-print(f_n)
+mx_n =0
+mn_n =0
+# 최대수
+for i in range(len(N)+1):
+    temp_l = sorted(c_lst)
+
+    if i == 0:
+        if temp_l[0] == 0:
+            mx_n+= temp_l[1]*10**(len(N)-i)
+        else:
+            mx_n+=temp_l[0]*10**(len(N)-i)
+    else:
+        mx_n+= min(c_lst)*(10**(len(N)-i))
+
+    if i == len(N):
+        f_n = f_n if abs(nn-mx_n)+len(str(mx_n))>abs(nn-f_n)+ len(str(f_n)) else mx_n
+
+# 최소수
+for i in range(len(N) - 1):
+    mn_n+= max(c_lst)*(10**(len(N)-i-2))
+    if i == len(N)-2:
+        f_n = f_n if abs(nn-mn_n)+len(str(mn_n))>abs(nn-f_n)+ len(str(f_n)) else mn_n
+
 if len(str(f_n))+abs(f_n-nn) > pm_cnt:
     print(pm_cnt)
 else:
