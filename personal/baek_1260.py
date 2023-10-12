@@ -8,6 +8,9 @@ def dfs (cn,lst,ans,vs):
 
     if cn not in ans:
         ans.append(cn)
+
+    if lst[cn] == 0:
+        return
     vs[cn]=0
     for i in lst[cn]:
         dfs(i,lst,ans,vs)
@@ -21,6 +24,10 @@ def bfs (cn,lst,ans):
     vs = [0]+[1]*(len(lst)-1)
     #방문해야할 노드 리스트
     q = deque()
+
+    if lst[cn] == 0:
+        return
+
     for i in lst[cn]:
         q.append(i)
         vs[i] = 0
