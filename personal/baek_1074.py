@@ -10,6 +10,7 @@ def self_z(n,x,y,val,c,r):
             return val[0]
         val[0] += 1
     else:
+    # 해당 범위 안에 있는 c r만 탐색하도록 변경해야할듯...
     # 계속 넷으로 나눈다
         res = self_z(n//2,x,y,val,c,r)
         if res is not None:
