@@ -12,15 +12,18 @@ def bfs(sn,tn,lst):
         return 1
 
     for i in range(len(lst)):
-        # 해당 노드들 큐에 넣음
-        # 1이면
         if lst[sn][i] == 1:
             q.append(i)
 
 
     while len(q) != 0:
         n = q.pop()
-
+        if lst[n][tn] ==1:
+            return ;
+        for i in range(len(lst)):
+            if lst[n][i] == 1 and vs[i] != 1:
+                vs[i] = 1
+                q.append(n)
 
 
 # 케빈 베이컨의 수
